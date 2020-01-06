@@ -1,0 +1,23 @@
+server:
+  port: 8090
+
+spring:
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://localhost:3306/wechat?useSSL=false&serverTimezone=GMT%2B8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+    #\u63A7\u5236\u53F0\u65E5\u5FD7\u914D\u7F6E  \u6253\u5370sql
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath:mappers/*.xml
+
+#\u4FEE\u6539\u65E5\u5FD7
+logging:
+  pattern:
+    console: "[%thread] %-5level %logger{36} - %msg%n"
+
